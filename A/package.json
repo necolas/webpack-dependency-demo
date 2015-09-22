@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -12,5 +13,9 @@
     "babel-core": "^5.8.25",
     "babel-loader": "^5.3.2",
     "webpack": "^1.12.2"
+  },
+  "dependencies": {
+    "@demo/b": "file:../B",
+    "@demo/c": "file:../C"
   }
 }

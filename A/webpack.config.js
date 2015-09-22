@@ -12,9 +12,6 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new webpack.optimize.DedupePlugin()
-  ],
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'out.js'

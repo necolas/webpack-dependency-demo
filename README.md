@@ -1,4 +1,4 @@
-# webpack duplicate dependency issue
+# webpack dependency demo using npm@3
 
 Dependency tree:
 
@@ -10,10 +10,14 @@ Dependency tree:
     B
 ```
 
-- `npm install && npm link` in `B` and `C`
-- `npm install && npm link @demo/B @demo/C` in `A`
-- `webpack` in `A`
+- `npm install -g npm@3`
+- `cd A`
+- `npm install`
+- `npm run build`
 
-Look at `A/dist/out.js` — it will contain 2 versions of `B`, even though `C` and `A` depend on the same one.
+The dependencies between A, B, and C are specified using local paths.
 
-Removing the `babel-loader` from `A`'s `webpack.config.js` works.
+Look at `A/dist/out.js` — it will contain 1 version of `B`.
+
+Change some code in B or C, run `npm install`, and the local installations in A
+should be updated when using npm@3 (but not when using npm@2).
